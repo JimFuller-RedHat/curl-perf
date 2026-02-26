@@ -1,0 +1,29 @@
+[project]
+name = "curl-perf"
+version = "0.1.0"
+description = "Performance benchmark tool for curl/libcurl and other HTTP clients"
+authors = [
+    { name = "JimFuller-RedHat", email = "jfuller@redhat.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "hypercorn>=0.18.0",
+    "pyrequest>=0.5",
+    "urllib3>=2.6.3",
+]
+
+[project.scripts]
+curl-perf = "curl_perf.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.3,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

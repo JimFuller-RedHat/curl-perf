@@ -1,0 +1,6 @@
+.vscode/
+.venv/
+venv/
+scripts/etc/logstash/*
+scripts/etc/redis/*
+__pycache__
